@@ -1,0 +1,24 @@
+CREATE DATABASE financas;
+
+CREATE SEQUENCE receita_seq;
+CREATE TABLE IF NOT EXISTS receita (
+  id BIGINT DEFAULT NEXTVAL('receita_seq') NOT NULL,
+  valor double precision NOT NULL,
+  descricao VARCHAR(255) NULL,
+  data_recebimento DATE NOT NULL,
+  tipo_receita VARCHAR(255) NOT NULL,
+  cliente VARCHAR(255) NOT NULL,
+  forma_pagamento VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id));
+  
+  CREATE SEQUENCE despesa_seq;
+  CREATE TABLE IF NOT EXISTS despesa (
+  id BIGINT DEFAULT NEXTVAL('despesa_seq') NOT NULL,
+  valor double precision NOT NULL,
+  descricao VARCHAR(255) NULL,
+  data_pagamento DATE NOT NULL,
+  tipo_despesa VARCHAR(255) NOT NULL,
+  fornecedor VARCHAR(255) NOT NULL,
+  centro_custos INT NOT NULL,
+  numero_nota_fiscal VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id));
